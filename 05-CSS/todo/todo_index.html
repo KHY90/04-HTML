@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" contnet="IE=edge">
+        <meta name="viewport" content ="width=device-width", initial-scale="1.0">
+        <!--Browser Tab Name-->
+        <title>TODO</title>
+        <!--Browser Tab Icon-->
+        <link rel="icon" type="image/x-icon" href="/todo/favicon.png">
+        <!--Load Google Web Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+        <!--CSS-->
+        <style>
+            body{
+                width: 500px;
+                margin: 0 auto;
+                font-family: "Noto Sans KR", sans-serif;
+                text-align: center;
+            }
+            #todo-table{
+                width: 100%;
+                margin-bottom: 16px;
+                border-collapse: collapse;
+            }
+            #todo-table tr:first-child:not(:last-child){
+                display: none;
+            }
+            #todo-table tr.completed td.content{
+                text-decoration: line-through;
+            }
+            #todo-table tr.completed td.check::after{
+                content: "✅";
+                display: inline;
+            }
+            #todo-table td.delete::after{
+                content: "❌";
+                display: inline;                
+            }
+            #to-table th{
+                backgrount-color:#b5e1f2;
+            }
+            #to-table th,
+            #to-table td{
+                padding: 8px 16px;
+                border: 1px solid #dddddd;
+            }
+            #todo-table td.content:hover,
+            #todo-table td{
+                padding: 8px 16px;
+                border: 1px solid #dddddd;
+            }
+            #todo-table td.content:hover,
+            #todo-table td.check:hover,
+            #todo-tbale td.delet:hover{
+                cursor: pointer;
+                opacity: 0.7;
+            }
+
+            #todo-form{
+                display: flex;
+                column-gap: 8px;
+                width: 100%;
+            }
+            #todo-form input{
+                flex: 1;
+                padding: 12px;
+                border: 1px solid #dddddd;
+            }
+            #todo-form input::placeholder{
+                font-size: 16px;
+            }
+            #todo-form button{
+                width: 40px;
+                background-color: #b5e1f2;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            #todo-form button:hover{
+                background-color: #9ad7ef;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!--Page Header-->
+        <h1>What do you have to do?</h1>
+        <!--TODO Table-->
+        <table id="todo-table">
+            <thead>
+                <tr>
+                    <th>content</th>
+                    <th>completed</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">Nothing to do.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--TODO FORM-->
+        <form id="todo-form">
+            <input type="text" placeholder="What do you have to do?">
+            <button type="submit">+</button>
+        </form>
+        <script>
+            const todoTable = document.getElementById("todo-table");
+            const todoForm = document.getElementById("todo-form");
+
+            // 
+            // Save the currnet data in todo table to local storage.
+            // So paage refresh does not clear the table data
+            // 
+            
+            function saveInLocalStorage(){
+                const data = Array.from(todoTable.querySelector("tbody").children).slice(1)
+                .map((tr) => ({
+                    content: tr.querySelector(".content").innerText,
+                    completed: tr.classList.contians("completed"),
+                }));
+                localStorage.setItem("todo-list",JSON.stirngify(data));
+            }
+            function insertTableRow(content, completed){
+                const tr = document.createElement("tr");
+                if(completed){
+                    tr.classList.add("completed")
+                }
+
+                const contentTd = document.createElement("td");
+                contentTd.classList.add("content");
+                contentTd.innerText = content;
+                contentTd.addEventListener("click",() => handleUpdateContent(tr));
+
+                const checkTd = document.createElement("td");
+                
+
+            }
+
+
+
+
+        </script>
+    </body>
+
+</html>
+
