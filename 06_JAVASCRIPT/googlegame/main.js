@@ -36,66 +36,66 @@ class Cactus {
 }
 
 var timer = 0;
-var cactus여러개 = [];
-var 점프timer = 0;
+var cacti = [];
+var jumptimer = 0;
 var animation;
 
-function 프레임마다실행할거() {
-    animation = requestAnimationFrame(프레임마다실행할거);
+function runEveryFrame() {
+    animation = requestAnimationFrame(runEveryFrame);
     timer++;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (timer % 200 === 0) {
         var cactus = new Cactus();
-        cactus여러개.push(cactus);
+        cacti.push(cactus);
     }
 
-    cactus여러개.forEach((a, i, o) => {
+    cacti.forEach((a, i, o) => {
         // x좌표가 0미만이면 제거
         if (a.x < 0) {
             o.splice(i, 1)
         }
         a.x--;
 
-        충돌하냐(dino, a);
+        checkCollision(dino, a);
 
         a.draw();
     })
 
     // 점프기능
-    if (점프중 == true) {
+    if (isJumping == true) {
         dino.y--;
-        점프timer++;
+        jumptimer++;
     }
-    if (점프중 == false) {
+    if (isJumping == false) {
         if (dino.y < 200) {
             dino.y++;
         }
     }
-    if (점프timer > 100) {
-        점프중 = false;
-        점프timer = 0
+    if (jumptimer > 100) {
+        isJumping = false;
+        jumptimer = 0
     }
 
     dino.draw();
 }
 
-프레임마다실행할거();
+runEveryFrame();
 
 // 충돌확인
-function 충돌하냐(dino, cactus) {
-    var x축차이 = cactus.x - (dino.x + dino.width);
-    var y축차이 = cactus.y - (dino.y + dino.height);
-    if (x축차이 < 0 && y축차이 < 0) {
+function checkCollision(dino, cactus) {
+    var xDifference = cactus.x - (dino.x + dino.width);
+    var yDifference = cactus.y - (dino.y + dino.height);
+    if (xDifference < 0 && yDifference < 0) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         cancelAnimationFrame(animation)
     }
 }
 
-var 점프중 = false;
+var isJumping = false;
 document.addEventListener('keydown', function (e) {
     if (e.code === 'Space') {
-        점프중 = true;
+        isJumping = true;
     }
 });
