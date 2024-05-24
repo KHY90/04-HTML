@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>03_use class</title>
 </head>
+
 <body>
     <h1>03. class를 이용한 요소 노드 취득</h1>
     <pre>
@@ -45,11 +47,12 @@
         console.log($availableDrinks);
 
         [...$availableDrinks].forEach(drink => drink.style.color = 'blue');
-    
+
         // 해당 class를 갖는 요소가 존재하지 않을 경우 빈 HTMLCollection 객체 반환
         const $noElem = $available.getElementsByClassName('soju');
         console.log($noElem);
     </script>
 
 </body>
+
 </html>
