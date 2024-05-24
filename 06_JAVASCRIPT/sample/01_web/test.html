@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        
+        table, th, td{
+            border: 1px double black;
+            text-align: center;
+        }
+
+        th{
+            background-color: greenyellow;
+            font-weight: bold;
+        }
+
+        td{
+            font-style: italic;
+        }
+
+        .writer{
+            background-color: gold;
+            color: green;
+            font-style: oblique;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="task-table">
+        <caption>HTML5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;웹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;프로그래밍</caption>
+        <thead>
+            <tr>
+                <th>과목</th>
+                <th>학년</th>
+                <th>학습진도율</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>그래픽커뮤니케이션</td>
+                <td>3</td>
+                <td><meter class="progress" max="100" value="73.33"></meter></td>
+            </tr>
+            <tr>
+                <td>데이터베이스시스템</td>
+                <td>3</td>
+                <td><meter class="progress" max="100" value="66"></meter></td>
+            </tr>
+            <tr>
+                <td>이산수학</td>
+                <td>2</td>
+                <td><meter class="progress" max="100" value="0"></meter></td>
+            </tr>
+            <tr>
+                <td>자바프로그래밍</td>
+                <td>2</td>
+                <td><meter class="progress" max="100" value="80"></meter></td>
+            </tr>
+            <tr>
+                <td>html5 웹프로그래밍</td>
+                <td>2</td>
+                <td><meter class="progress" max="100" value="80"></meter></td>
+            </tr>
+            <tr>
+                <td>세상읽기와 논술</td>
+                <td>2</td>
+                <td><meter class="progress" max="100" value="80"></meter></td>
+            </tr>
+            <tr>
+                <td>평균학습(%)</td>
+                <td colspan="2" id="average"><meter max="100" value="80" title="현재 평균 학습비율 70%"></meter></td>
+            </tr>
+            <tr class="writer">
+                <td>
+                    서울남부
+                </td>
+                <td>
+                    이상우
+                </td>
+                <td>
+                    202234-153693
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <figure>
+        <img src="https://i.namu.wiki/i/0p1oaqvXngSxJ7xy1LqNG_bwS0Jxd4HxGFT_Y-3fj3_hXDc883pKZGEgBrqypdFpxtWAJ4D4uVyasyMvosF_zy93KIVDX7IMfzoN6mVRgJPEx-83V4siuGZuwPeFCnkNP5BDzPFKbBUQ-P6uXxX36w.svg"/>
+        <figcaption>방송통신대학교 로고</figcaption>
+    </figure>
+</body>
+
+</html>

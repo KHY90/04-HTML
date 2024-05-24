@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+</head>
+<body>
+    <header style="background-color: #f0f0f0; padding: 10px;">
+        <h1>과제</h1>
+    </header>
+    <section>
+        <h2>비디오 재생 예시</h2>
+        <video controls poster="poster.jpg" style="width: 100%;">
+            <source src="https://youtu.be/t37jMbfNTPk?si=T-t2vpYBsuDM_II-" type="video/mp4">
+            브라우저가 비디오 태그를 지원하지 않습니다.
+        </video>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('video');
+            video.addEventListener('loadedmetadata', function() {
+                video.currentTime = 5;
+                video.play();
+                video.addEventListener('timeupdate', function() {
+                    if (video.currentTime >= 17) {
+                        video.pause();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
