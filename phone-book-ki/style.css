@@ -9,7 +9,7 @@ header {
 }
 
 /* 로고 스타일 */
-.logo {
+.logo p {
     font-size: 24px; /* 폰트 크기 지정 */
     font-weight: bold; /* 폰트 굵기 설정 */
 }
