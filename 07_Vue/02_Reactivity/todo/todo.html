@@ -5,34 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>Document</title>
-    <style>
-        /* 간단한 스타일링 */
-        .search {
-            margin-bottom: 20px;
-        }
-        ol {
-            padding-left: 20px;
-        }
-        li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-        button {
-            margin-left: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
+    <title>ToDo</title>
 </head>
 
 <body>
-    <header>todo list</header>
+    <header>
+        <h1>todo list</h1>
+    </header>
 
     <div id="app">
         <div class="search">
-            <input type="text" v-model="newTodo" placeholder="할 일을 입력하세요">
-            <button @click="addTodo">등록</button>
+            <input type="text" v-model="Todo" placeholder="할 일을 입력하세요">
+            <button @click="addTodo" class="bt">등록</button>
         </div>
         <ol>
             <li v-for="(todo, index) in todos" :key="index">
@@ -47,22 +32,22 @@
 
         createApp({
             setup() {
-                const newTodo = ref('');
+                const Todo = ref('');
                 const todos = ref([]);
 
                 function addTodo() {
-                    if (newTodo.value.trim() !== '') {
-                        todos.value.push(newTodo.value);
-                        newTodo.value = '';
+                    if (Todo.value.trim() !== '') {     // newTodo.value의 앞뒤 공백을 제거한 문자열이 비어있지 않은 경우에만 실행
+                        todos.value.push(Todo.value); // todos 배열에 newTodo.value를 추가
+                        Todo.value = '';  // newTodo.value를 빈 문자열로 설정하여 입력 필드를 초기화
                     }
                 }
 
                 function removeTodo(index) {
-                    todos.value.splice(index, 1);
+                    todos.value.splice(index, 1); // .splice(index,1) 1번 인덱스를 제거하는 메서드 
                 }
 
                 return {
-                    newTodo,
+                    Todo,
                     todos,
                     addTodo,
                     removeTodo
