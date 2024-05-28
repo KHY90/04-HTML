@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./data2.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="toggleMode">{{isCharacterMode ? 'skill mode' :'charater mode'}}</button>
+        <div class="row">
+            <template v-if="isCharacterMode">
+                <div v-for="item in jsonData" :key="item.id">
+                    <div class="bordered">
+                        <p>이름 : {{ item.name }}</p>
+                        <p>소개 : {{ item.introduction }}</p>
+                        <img :src="item.img" :alt="item.name">
+                    </div>
+                </div>
+            </template>
+
+            <template v-else>
+                <div v-for="item in jsonSkill" :key="item.id">
+                    <div class="bordered">
+                        <p>이름 : {{ item.skill }}</p>
+                        <p>소개 : {{ item.introduction }}</p>
+                        <div class="skill-image">
+                            <div v-for="img in item.imgs" :key="img">
+                                <img :src="img" :alt="item.skill">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue;
+
+        createApp({
+            setup() {
+                const jsonData = ref(scholar);
+                const jsonSkill = ref(msaSkill);
+                const isCharacterMode = ref(true);
+
+                const toggleMode = () => {
+                    isCharacterMode.value = !isCharacterMode.value;
+                };
+
+                return {
+                    jsonData,
+                    jsonSkill,
+                    isCharacterMode,
+                    toggleMode
+                };
+            }
+        }).mount("#app");
+    </script>
+</body>
+
+</html>

@@ -12,6 +12,7 @@ header {
 .logo p {
     font-size: 24px; /* 폰트 크기 지정 */
     font-weight: bold; /* 폰트 굵기 설정 */
+    display : flex;
 }
 
 /* 네비게이션 메뉴 스타일 */
@@ -38,7 +39,7 @@ input[type="text"] {
     max-width: 300px; /* 최대 너비를 지정할 수도 있습니다 */
 }
 
-button {
+.button {
     padding: 10px 20px;
     background-color: #6812f2;
     color: #fff;
