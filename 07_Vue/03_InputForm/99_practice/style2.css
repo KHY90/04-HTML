@@ -1,0 +1,99 @@
+body {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin: 0;
+}
+
+.top {
+    border: 0px solid black;
+}
+
+#select {
+    display: flex;
+    text-align: left;
+    justify-content: left;
+}
+
+.togg{
+    display: flex;
+    text-align: left;
+    justify-content: left;
+}
+
+.first {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    border: 1px solid black;
+    width: 550px;
+    height: 100%;
+    overflow: auto;
+    /* text-align: center; */
+    object-fit: cover;
+}
+
+.second {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    border: 1px solid black;
+    width: 550px;
+    height: 100%;
+    overflow: auto;
+    /* text-align: center; */
+    object-fit: cover;
+}
+
+
+.insert {
+    /* flex-direction: column; */
+    align-items: center;
+    border: 1px solid black;
+    width: 550px;
+    height: 100%;
+    overflow: auto;
+    text-align: center;
+    object-fit: cover;
+}
+
+button.tog {
+    text-align: left;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: auto;
+}
+
+.bordered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+    overflow: auto;
+    text-align: center;
+    object-fit: cover;
+}
+
+img {
+    width: 50%;
+    height: 50%;
+}
+
+.skill-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.skill-image img {
+    padding: 20px;
+    width: 70px;
+    height: 70px;
+}

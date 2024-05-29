@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./data.js"></script>
+    <link rel="stylesheet" href="./style2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        조회하기 클릭하면 index로 넘어가게하기
+        인물등록, 스킬등록 <select v-model="selected" @change="check">를 이용
+        인물등록 칸 - 이름/소개/이미지 input박스
+        스킬등록 칸 - 스킬/리스트(기술list는 ','로 구분)/소개/이미지 이미지 input칸 for문 배열로 늘리기
+
+        등록하기
+    -->
+
+    <div id="one">
+        <button @click="toggleMode" class="tog">{{isCharacterMode ? '조회하기' : 'skill mode' :'charater mode'}}</button>
+            <div class="first">
+                <div id="select">
+                    <div class="togg">
+                        <select v-model="selected" @change="check">
+                            <option value="human">인물등록</option>
+                            <option value="tech">기술등록</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="insert">
+                    <p>name : </p><input type="text">
+                    <br>
+                    <p>introduction : </p><input type="text">
+                    <br>
+                    <p>img : </p><input type="image url: " />
+                    <br>
+                </div>
+                <div class="togg">
+                    <button @click="toggleMode">등록하기</button>
+                </div>
+            </div>
+
+            <div class="second">
+                <div id="insert">
+                    <div class="togg">
+                        <select v-model="selected" @change="check">
+                            <option value="human">인물등록</option>
+                            <option value="tech">기술등록</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="insert">
+                    <p>skill : </p><input type="text">
+                    <br>
+                    <p>list : </p><input type="text">
+                    <br>
+                    <p>introduction : </p><input type="text">
+                    <br>
+                    <p>img : </p><input type="image url: " />
+                    <div id="inputContainer"></div>
+                    <button id="addInput">이미지 추가</button>
+                </div>
+                <div class="togg">
+                    <button @click="toggleMode">등록하기</button>
+                </div>
+            </div>
+    </div>
+
+    <script>
+
+        const addButton = document.getElementById('addInput');
+        const inputContainer = document.getElementById('inputContainer');
+
+        let inputIndex = 1;
+
+        addButton.addEventListener('click', () => {
+            const newInput = document.createElement('input');
+            newInput.type = 'image url: ';
+            newInput.name = `image url: ${inputIndex++}`;
+            inputContainer.appendChild(newInput);
+        });
+
+    </script>
+
+    <!-- <script>
+        const { createApp, ref } = Vue;
+
+        createApp({
+            setup() {
+                const tech = ref();
+                const human = ref();
+
+                const check = () => {
+                    console.log(selected.value);
+                }
+
+                return {
+                    tech,
+                    human,
+                    check
+                }
+            }
+        }).mount("#select");
+
+        createApp({
+            setup(){
+
+            }
+
+        }).mount("");
+    </script> -->
+
+</body>
+
+</html>

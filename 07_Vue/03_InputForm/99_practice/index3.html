@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./data.js"></script>
+    <link rel="stylesheet" href="./style3.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>vue v-model 이해하기</h1>
+        <button @click="toFindMode">조회하기</button>
+        <br><hr>
+
+        <select v-model="selected" @change="check">
+            <option value="skillAdd">스킬등록</option>
+            <option value="personAdd">인물등록</option>
+         </select>
+
+        <!-- 스킬 등록 -->
+        <ul v-if="selected === 'skillAdd'">
+            <label>skill:</label><br> <input v-model="skill"/>
+            <br><br>
+            <label>list:</label> <br><input v-model="list"/>
+            <br><br>
+            <label>introduction:</label><br> <input v-model="introduction"/>
+            <br><br>
+            <label>img:</label> 
+            <div v-for="(img, index) in imgs" :key="index">
+                <br><input v-model="imgs[index]"/>
+            </div>
+            <br><br>
+            <button @click="toAddImg">이미지 추가</button>
+        </ul>
+
+        <!-- 인물 등록 -->
+        <ul v-if="selected === 'personAdd'">
+            <label>name:</label><br> <input v-model="name"/>
+            <br><br>
+            <label>introduction:</label><br> <input v-model="introduction"/>
+            <br><br>
+            <label>img:</label> <br><input v-model="img"/>
+        </ul>
+
+        <hr>
+        <button @click="toAddInfo">등록하기</button>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue;
+
+        createApp({
+            setup() {
+                const jsonData = scholar;
+                const jsonSkillData = msaSkill;
+                const selected = ref("personAdd");
+                const skill = ref('');
+                const list = ref('');
+                const introduction = ref('');
+                const imgs = ref(['']);
+                const img = ref('');
+                const name = ref('');
+
+                const toFindMode = () => {
+                };
+
+                const check = () => {
+                };
+
+                const toAddImg = () => {
+                    imgs.value.push('');
+                };
+
+                const toAddInfo = () => {
+                };
+
+                return {
+                    jsonData,
+                    jsonSkillData,
+                    selected,
+                    skill,
+                    list,
+                    introduction,
+                    imgs,
+                    img,
+                    name,
+                    toFindMode,
+                    check,
+                    toAddImg,
+                    toAddInfo
+                };
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>
