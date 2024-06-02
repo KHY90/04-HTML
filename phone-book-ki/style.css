@@ -200,7 +200,34 @@ iframe {
     border: none;
 }
 
-.main-container{
+.main-container {
     margin-left: 20px;
     margin-right: 20px;
-} 
+}
+
+.ibm-plex-sans-kr-regular {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 전화번호 리스트 스타일 조정 */
+
+.phone-list {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.phone-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.phone-list li {
+    margin-bottom: 10px;
+}
+
+.phone-list li span {
+    display: inline-block;
+    width: 150px;
+}
