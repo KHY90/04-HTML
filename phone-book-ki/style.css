@@ -6,7 +6,7 @@ header {
     /* 내부 요소를 좌우로 분산 정렬합니다 */
     align-items: center;
     /* 내부 요소를 수직으로 가운데 정렬합니다 */
-    background-color: #9e47fc;
+    background-color: #0d1dd1;
     /* 배경색 지정 */
     color: #fff;
     /* 텍스트 색상 지정 */
@@ -55,7 +55,7 @@ input[type="text"] {
 
 .button {
     padding: 10px 20px;
-    background-color: #6812f2;
+    background-color: #0d1dd1;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -97,7 +97,7 @@ input[type="text"] {
 
 /* Footer 스타일 */
 footer {
-    background-color: #9e47fc;
+    background-color: #0d1dd1;
     padding: 20px;
     text-align: center;
 }
@@ -122,64 +122,85 @@ footer {
 
 /* 이미지 사이즈 조정 */
 .sub-container div a img {
-    width: 50%; /* 이미지 너비 */
-    height: auto; /* 높이 자동 조정 */
+    width: 50%;
+    /* 이미지 너비 */
+    height: auto;
+    /* 높이 자동 조정 */
     padding: 10px;
 }
 
 /* 이미지 간격 조정 */
 .sub-container div {
     display: flex;
-    justify-content: space-around; /* 이미지들을 가운데 정렬하고 간격을 주기 위해 */
-    margin-bottom: 20px; /* 그리드 아래 여백 */
+    justify-content: space-around;
+    /* 이미지들을 가운데 정렬하고 간격을 주기 위해 */
+    margin-bottom: 20px;
+    /* 그리드 아래 여백 */
 }
 
 /* 컨테이너 간 간격 조정 */
 .sub-container {
-    margin-top: 20px; /* 컨테이너 위 여백 */
+    margin-top: 20px;
+    /* 컨테이너 위 여백 */
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /* 반응형 이미지 크기 조정 */
 @media screen and (max-width: 768px) {
     .sub-container div a img {
-        width: 80px; /* 미디어 쿼리에서 이미지 크기 조정 */
+        width: 80px;
+        /* 미디어 쿼리에서 이미지 크기 조정 */
     }
 }
 
-        /* 이미지 사이즈 조정 */
-        .sub-container div a img {
-            width: 100px; /* 이미지 너비 */
-            height: auto; /* 높이 자동 조정 */
-        }
+/* 이미지 사이즈 조정 */
+.sub-container div a img {
+    width: 100px;
+    /* 이미지 너비 */
+    height: auto;
+    /* 높이 자동 조정 */
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
-        /* 이미지 간격 조정 */
-        .sub-container div {
-            display: flex;
-            justify-content: space-around; /* 이미지들을 가운데 정렬하고 간격을 주기 위해 */
-            margin-bottom: 20px; /* 그리드 아래 여백 */
-        }
+/* 이미지 간격 조정 */
+.sub-container div {
+    display: flex;
+    justify-content: space-around;
+    /* 이미지들을 가운데 정렬하고 간격을 주기 위해 */
+    margin-bottom: 20px;
+    /* 그리드 아래 여백 */
+}
 
-        /* 컨테이너 간 간격 조정 */
-        .sub-container {
-            margin-top: 20px; /* 컨테이너 위 여백 */
-        }
+/* 컨테이너 간 간격 조정 */
+.sub-container {
+    margin-top: 20px;
+    /* 컨테이너 위 여백 */
+}
 
-        /* 반응형 이미지 크기 조정 */
-        @media screen and (max-width: 768px) {
-            .sub-container div a img {
-                width: 80px; /* 미디어 쿼리에서 이미지 크기 조정 */
-            }
-        }
+/* 반응형 이미지 크기 조정 */
+@media screen and (max-width: 768px) {
+    .sub-container div a img {
+        width: 80px;
+        /* 미디어 쿼리에서 이미지 크기 조정 */
+    }
+}
 
-        /* iframe 스타일 조정 */
-        .iframe-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
+/* iframe 스타일 조정 */
+.iframe-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
 
-        iframe {
-            width: 80%;
-            height: 500px;
-            border: none;
-        }
+iframe {
+    width: 80%;
+    height: 500px;
+    border: none;
+}
+
+.main-container{
+    margin-left: 20px;
+    margin-right: 20px;
+} 
