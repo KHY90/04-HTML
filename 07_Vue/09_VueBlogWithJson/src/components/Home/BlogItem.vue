@@ -1,12 +1,12 @@
 <script setup>
-import { useRouter } from "vue-router";
+    import { useRouter } from "vue-router";
 
-const router = useRouter();
-const {blog} = defineProps(["blog"]);
+    const router = useRouter();
+    const {blog} = defineProps(["blog"]);
 
-function detailView(id) {
-    router.push(`/blogs/${id}`) // pathVariable
-}
+    function detailView(id) {
+        router.push(`/blogs/${id}`);
+    }
 </script>
 
 <template>

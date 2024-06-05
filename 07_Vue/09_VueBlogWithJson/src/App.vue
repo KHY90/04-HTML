@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <div>
+    <div >
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -13,18 +13,17 @@ import { RouterLink, RouterView } from 'vue-router'
       </nav>
     </div>
   </header>
-
   <RouterView />
 </template>
 
 <style scoped>
-header {
+header{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-a {
+a{
   margin-left: 10px;
   font-size: 20px;
 }

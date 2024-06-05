@@ -12,19 +12,19 @@ watchEffect(() => {
 });
 
 const handler = () => {
-    blogStroe.modifyHandler({ id: route.params.id, ...blogStroe.detailsBlog.value })
+    blogStroe.modifyHandler({id : route.params.id, ...blogStroe.detailsBlog.value })
 }
-const deleteMethod = () => {
+const deleteMethod = () =>{
     blogStroe.deleteHandler(route.params.id);
-
 }
+
 </script>
 
 <template>
     <div class="blogContainer">
         <div class="titleContainer">
             <h1 class="title" v-if="modify"> {{ blogStroe.detailsBlog.value?.title }}</h1>
-            <input v-else v-model="blogStroe.detailsBlog.value.title" />
+            <input v-else v-model="blogStroe.detailsBlog.value.title"/>
             <div v-if="modify">
                 <button @click="() => modify = false">수정</button>
                 <button @click="deleteMethod">삭제</button>
@@ -45,7 +45,7 @@ const deleteMethod = () => {
         </div>
         <div class="content" v-else>
             <div>
-                <textarea v-model="blogStroe.detailsBlog.value.content"></textarea>
+                <textarea v-model="blogStroe.detailsBlog.value.content" ></textarea>
             </div>
             <div class="imgContainer">
                 <div>

@@ -1,16 +1,15 @@
 <script setup>
-import TheWelcom from '@/components/Home/TheWelcom.vue';
-
+    import TheWelcom from '@/components/home/TheWelcom.vue';
 </script>
 
 <template>
     <main>
-        <TheWelcom />
+        <TheWelcom/>
     </main>
 </template>
 
 <style scoped>
-main {
+  main{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,5 +18,5 @@ main {
     margin-left: auto;
     margin-right: auto;
     border: 1px dotted;
-}
+  }
 </style>

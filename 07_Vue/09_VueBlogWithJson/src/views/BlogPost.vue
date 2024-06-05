@@ -1,14 +1,13 @@
 <script setup>
-import { useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import { useBlogStore } from '../stores/blog';
 import { watchEffect, ref } from "vue";
 
 const { postBlog, postHandler } = useBlogStore();
 
-const handelr = () => {
+const handler = () => {
     postHandler(postBlog);
 }
-
 </script>
 
 <template>

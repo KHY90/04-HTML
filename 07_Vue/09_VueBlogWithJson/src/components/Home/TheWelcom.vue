@@ -1,14 +1,13 @@
 <script setup>
 import BlogItem from "./BlogItem.vue";
-import { useBlogStore } from "../../stores/blog";
-import { onMounted, provide } from "vue";
+import {useBlogStore} from "../../stores/blog";
+import {onMounted, provide} from "vue";
 
 const blogStore = useBlogStore();
 
-onMounted(() => {
+onMounted(()=>{
     blogStore.blogHandler();
 })
-
 </script>
 
 <template>
@@ -19,7 +18,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.listBox {
+.listBox{
     width: 70%;
 }
 </style>

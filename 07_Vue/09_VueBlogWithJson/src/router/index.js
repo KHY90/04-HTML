@@ -6,26 +6,26 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
+  routes:[
     {
-      path: '/',
+      path:'/',
       name: 'home',
       component: HomeView
     },
     {
-      path: "/blogs/:id",
-      name: "blogs",
-      component: DetailsView
+      path:"/blogs/:id",
+      name:"blogs",
+      component : DetailsView
     },
     {
-      path: "/post",
-      name: "post",
-      component: BlogPost
+      path:"/post",
+      name:"post",
+      component:BlogPost
     },
     {
-      path: "/about",
-      name: "about",
-      component: AboutView
+      path :"/about",
+      name :"about",
+      component : AboutView
     }
   ]
 })
